@@ -1,0 +1,46 @@
+@"
+# --- Python venvs ---
+env/
+.venv/
+venv/
+
+# --- Python cache & build ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.dist/
+build/
+dist/
+.eggs/
+.pytest_cache/
+
+# --- IDE/editor ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- OS crap ---
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Env / secrets ---
+*.env
+.env.*
+
+# --- Logs ---
+*.log
+
+# --- Node (por si usas algo de front) ---
+node_modules/
+
+# --- Render (nada especial; lo mantenemos limpio) ---
+
+# --- Modelos ---
+# (No ignoramos model/model.pkl porque SÍ lo quieres versionar)
+"@ | Set-Content -Encoding UTF8 .gitignore
