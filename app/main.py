@@ -9,7 +9,7 @@ from app.srf_model import SimpleRandomForest
 app = FastAPI(title="Random Forest API", version="1.0.0")
 
 # Permite override vía env var como sugiere el anexo (MODEL_PATH)
-MODEL_PATH = os.getenv("MODEL_PATH", "model/model.pkl")
+MODEL_PATH = os.getenv("MODEL_PATH", "model/srf_propio_model.pkl")
 
 try:
     model = joblib.load(MODEL_PATH)
