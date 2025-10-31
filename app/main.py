@@ -4,14 +4,16 @@ from pydantic import BaseModel, conlist
 import os
 import joblib
 import numpy as np
+import sys
+import app.srf_model 
 
-from app.srf_model import SimpleRandomForest
 app = FastAPI(title="Random Forest API", version="1.0.0")
 
 # Permite override vía env var como sugiere el anexo (MODEL_PATH)
 MODEL_PATH = os.getenv("MODEL_PATH", "model/srf_propio_model.pkl")
 
 try:
+    sys.modules['__main__'] = app.srf_model
     model = joblib.load(MODEL_PATH)
 except Exception as e:
     # Si falla la carga, devuelve error claro
