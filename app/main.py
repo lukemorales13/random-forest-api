@@ -22,7 +22,7 @@ except Exception as e:
 # ---- Esquemas de entrada/salida ----
 class PredictRequest(BaseModel):
     # Ajusta el tamaño a tus features reales; para Iris suele ser 4
-    features: conlist(float, min_items=1)
+    features: conlist(float, min_length=1) # type: ignore
 
 class PredictResponse(BaseModel):
     prediction: str
