@@ -6,6 +6,7 @@ import os
 import joblib
 import numpy as np
 
+from app.srf_model import SimpleRandomForest
 app = FastAPI(title="Random Forest API", version="1.0.0")
 
 # Permite override vía env var como sugiere el anexo (MODEL_PATH)
