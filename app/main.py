@@ -52,6 +52,9 @@ def predict(req: PredictRequest):
         pred = model.predict(X)[0]
         # Si tu y eran strings (setosa/versicolor/virginica), saldrá como str;
         # si eran ints, convierte a str para cumplir el formato del PDF:
+        iris_map = {0: "setosa", 1: "versicolor", 2: "virginica"}
+        if isinstance(pred, (int, np.integer)):
+            pred = iris_map.get(pred, str(pred))
         return {"prediction": str(pred)}
     except Exception as e:
         # Manejo de entradas inválidas (bonus + robustez)
