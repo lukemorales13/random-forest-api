@@ -1,7 +1,6 @@
 # app/main.py
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, conlist
-from typing import List, Optional
 import os
 import joblib
 import numpy as np

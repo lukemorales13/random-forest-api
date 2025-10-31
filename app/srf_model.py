@@ -1,3 +1,9 @@
+from typing import Optional, Union
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.utils.multiclass import type_of_target
+from sklearn.preprocessing import LabelEncoder
+
 class SimpleRandomForest:
     """
     Random Forest minimalista (bagging de árboles) con interfaz estilo scikit-learn.
